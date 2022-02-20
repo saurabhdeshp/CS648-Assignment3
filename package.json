@@ -4,9 +4,9 @@
   "description": "CS-648 | Assignment 3",
   "main": "index.js",
   "scripts": {
-    "start" : "npm run compile && npm run server",
-    "server" : "nodemon server/server.js",
-    "watch": "babel src --presets @babel/preset-react --out-dir public --watch --verbose",    
+    "start": "npm run compile && npm run server",
+    "server": "nodemon server/server.js",
+    "watch": "babel src --presets @babel/preset-react --out-dir public --watch --verbose",
     "compile": "babel src --presets @babel/react --out-dir public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -25,6 +25,8 @@
     "@babel/core": "^7.17.5",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
+    "@graphql-tools/graphql-file-loader": "^7.3.3",
+    "@graphql-tools/load": "^7.5.1",
     "apollo-server-express": "^3.6.3",
     "babel-loader": "^8.2.3",
     "express": "^4.17.3",

@@ -1,3 +1,38 @@
+const fetchProductGql = `query{
+    getAllProducts {
+      category
+      id
+      name
+      url
+      price
+    }
+  }
+  `;
+const mutateProductGql = `mutation AddProduct( $category: String!, $name: String!, $price: Float!, $url: String!){
+    addProduct( category: $category, name: $name, price: $price, url: $url) {
+      id
+      name
+      price 
+      url
+      category
+    }
+  }`;
+
+async function graphQLApi(query, variables = {}) {
+  const promise = fetch('/graphql', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      query,
+      variables
+    })
+  });
+  const res = await (await promise).json();
+  return res.data;
+}
+
 class ProductTable extends React.Component {
   render() {
     return /*#__PURE__*/React.createElement("table", {
@@ -27,8 +62,10 @@ class ProductAdd extends React.Component {
 
   onAddHandler(event) {
     event.preventDefault();
-    this.state.price = this.state.price.slice(1, this.state.price.length);
-    this.props.onAdd({ ...this.state
+    const data = { ...this.state
+    };
+    data.price = parseFloat(this.state.price.slice(1, this.state.price.length));
+    this.props.onAdd({ ...data
     });
     this.setState({ ...defaultState
     });
@@ -126,13 +163,20 @@ class ProductList extends React.Component {
     this.addProduct = this.addProduct.bind(this);
   }
 
-  addProduct(product) {
-    const products = this.state.products;
-    product.id = products.length + 1;
-    products.push(product);
+  async loadData() {
+    const data = await graphQLApi(fetchProductGql);
     this.setState({
-      products: products
+      products: data.getAllProducts
     });
+  }
+
+  componentDidMount() {
+    this.loadData();
+  }
+
+  async addProduct(product) {
+    await graphQLApi(mutateProductGql, product);
+    this.loadData();
   }
 
   render() {
