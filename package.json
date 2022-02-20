@@ -1,0 +1,35 @@
+{
+  "name": "cs648-assignment3",
+  "version": "1.0.0",
+  "description": "CS-648 | Assignment 3",
+  "main": "index.js",
+  "scripts": {
+    "start" : "npm run compile && npm run server",
+    "server" : "nodemon server/server.js",
+    "watch": "babel src --presets @babel/preset-react --out-dir public --watch --verbose",    
+    "compile": "babel src --presets @babel/react --out-dir public",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saurabhdeshp/CS648-Assignment3.git"
+  },
+  "author": "Saurabh Deshpande",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saurabhdeshp/CS648-Assignment3/issues"
+  },
+  "homepage": "https://github.com/saurabhdeshp/CS648-Assignment3#readme",
+  "dependencies": {
+    "@babel/cli": "^7.17.3",
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "apollo-server-express": "^3.6.3",
+    "babel-loader": "^8.2.3",
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
