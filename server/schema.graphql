@@ -1,7 +1,9 @@
 enum Categories {
-    jeans
-    jacket
-    shirt
+    Jeans
+    Jacket
+    Shirt
+    Sweater
+    Accessories
 }
 
 type Product {

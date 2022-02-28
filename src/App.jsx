@@ -100,9 +100,11 @@ class ProductAdd extends React.Component {
                         </label>
                         <select name="category" onChange={(e)=>{this.setCategory(e.target.value)}} value={this.state.category}>
                             <option value=""    >---select category---</option>
-                            <option value="shirt">shirt</option>
-                            <option value="jeans">jeans</option>
-                            <option value="jacket">jacket</option>
+                            <option value="Shirt">Shirt</option>
+                            <option value="Jeans">Jeans</option>
+                            <option value="Jacket">Jacket</option>
+                            <option value="Sweater">Sweater</option>
+                            <option value="Accessories">Accessories</option>
                         </select>
                     </div>
                     <div className="form-input">

@@ -112,12 +112,16 @@ class ProductAdd extends React.Component {
     }, /*#__PURE__*/React.createElement("option", {
       value: ""
     }, "---select category---"), /*#__PURE__*/React.createElement("option", {
-      value: "shirt"
-    }, "shirt"), /*#__PURE__*/React.createElement("option", {
-      value: "jeans"
-    }, "jeans"), /*#__PURE__*/React.createElement("option", {
-      value: "jacket"
-    }, "jacket"))), /*#__PURE__*/React.createElement("div", {
+      value: "Shirt"
+    }, "Shirt"), /*#__PURE__*/React.createElement("option", {
+      value: "Jeans"
+    }, "Jeans"), /*#__PURE__*/React.createElement("option", {
+      value: "Jacket"
+    }, "Jacket"), /*#__PURE__*/React.createElement("option", {
+      value: "Sweater"
+    }, "Sweater"), /*#__PURE__*/React.createElement("option", {
+      value: "Accessories"
+    }, "Accessories"))), /*#__PURE__*/React.createElement("div", {
       className: "form-input"
     }, /*#__PURE__*/React.createElement("label", {
       htmlFor: "price"
